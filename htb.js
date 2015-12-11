@@ -6,7 +6,7 @@ function htb(data) {
     var head = data.filter(function(d){return d > data_mean});
     var tail = data.filter(function(d){return d < data_mean});
     console.log(data_mean);
-    while (head.length > 1) {
+    while (head.length > 1 && head.length/data.length < 0.40) {
         return htb(head);
     };
 }
