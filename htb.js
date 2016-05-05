@@ -4,7 +4,6 @@
 function htb(data) {
     var data_mean = data.reduce(function(a, b){return a + b})/data.length;
     var head = data.filter(function(d){return d > data_mean});
-    var tail = data.filter(function(d){return d < data_mean});
     console.log(data_mean);
     while (head.length > 1 && head.length/data.length < 0.40) {
         return htb(head);
