@@ -37,7 +37,7 @@ def htb(data):
 
     def htb_inner(data):
         """
-        Inner ht breaks function for recursivesly computing the break points.
+        Inner ht breaks function for recursively computing the break points.
         """
         data_length = float(len(data))
         data_mean = sum(data) / data_length
