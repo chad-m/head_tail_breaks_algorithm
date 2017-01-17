@@ -14,7 +14,6 @@ function htb(data) {
         return htb(head);
     };
 }
-
 """
 
 
