@@ -1,11 +1,16 @@
 """
-Python implementation of the head/tail breaks algorithm.
+Python implementation of the head/tail breaks algorithm for classifying heavy-tailed distributions.
 
 Article reference: http://arxiv.org/ftp/arxiv/papers/1209/1209.2801.pdf
 
+Example:
+pareto_data = [(1/_)**1.16 for _ in range(1,100)]  # pareto distribution: x_min=1, a=1.16 (80/20)
+htb_pareto = htb(pareto_data)
+print(htb_pareto)
+[0.03883742394002349, 0.177990388624465, 0.481845351678573]
 
+=========================================================================
 JavaScript Implementation for reference:
-
 function htb(data) {
     var data_mean = data.reduce(function(a, b){return a + b})/data.length;
     var head = data.filter(function(d){return d > data_mean});
@@ -14,6 +19,7 @@ function htb(data) {
         return htb(head);
     };
 }
+
 """
 
 
