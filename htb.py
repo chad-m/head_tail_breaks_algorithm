@@ -36,7 +36,7 @@ def htb(data):
     outp: python list - data representing a list of break points.
     """
     # test input
-    assert len(data) > 0, "Input must not be empty."
+    assert data, "Input must not be empty."
     assert all(isinstance(_, int) or isinstance(_, float) for _ in data), "All input values must be numeric."
 
     outp = []  # array of break points
