@@ -29,11 +29,11 @@ def htb(data):
 
     Params:
     -------
-    data: python list
+    data (list): array of data to be split by htb.
 
     Returns:
     --------
-    outp: python list - data representing a list of break points.
+    outp (list): list of data representing a list of break points.
     """
     # test input
     assert data, "Input must not be empty."
