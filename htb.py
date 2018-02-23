@@ -10,7 +10,7 @@ htb_pareto = htb(pareto_data)
 print(htb_pareto)
 [0.03883742394002349, 0.177990388624465, 0.481845351678573]
 
-JavaScript implementation for reference:
+JavaScript Implementation for reference:
 function htb(data) {
     var data_mean = data.reduce(function(a, b){return a + b})/data.length;
     var head = data.filter(function(d){return d > data_mean});
