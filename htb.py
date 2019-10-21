@@ -28,12 +28,12 @@ def htb(data):
     Function to compute the head/tail breaks algorithm on an array of data.
 
     Params
-    -------
+    ------
     data : list
         Array of data to apply ht-breaks
 
     Returns
-    --------
+    -------
     outp (list): list of data representing a list of break points.
     """
     # test input
