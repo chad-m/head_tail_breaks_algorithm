@@ -34,7 +34,8 @@ def htb(data):
 
     Returns
     -------
-    outp (list): list of data representing a list of break points.
+    outp : list 
+        List of data representing break points
     """
     # test input
     assert data, "Input must not be empty."
