@@ -25,7 +25,7 @@ function htb(data) {
 
 def htb(data):
     """
-    Function to compute the head/tail breaks algorithm on an array of data.
+    Applies the head/tail breaks algorithm to an array of data.
 
     Params
     ------
