@@ -5,7 +5,7 @@ Article reference:
 http://arxiv.org/ftp/arxiv/papers/1209/1209.2801.pdf
 
 Example:
-pareto_data = [(1/_)**1.16 for _ in range(1,100)]  # pareto distribution: x_min=1, a=1.16 (80/20)
+pareto_data = [(1 / i)**1.16 for i in range(1,100)]  # pareto distribution: x_min=1, a=1.16 (80/20)
 htb_pareto = htb(pareto_data)
 print(htb_pareto)
 [0.03883742394002349, 0.177990388624465, 0.481845351678573]
@@ -39,7 +39,7 @@ def htb(data):
     """
     # test input
     assert data, "Input must not be empty."
-    assert all(isinstance(_, int) or isinstance(_, float) for _ in data), "All input values must be numeric."
+    assert all(isinstance(datum, int) or isinstance(datum, float) for datum in data), "All input values must be numeric."
 
     outp = []  # array of break points
 
@@ -49,9 +49,11 @@ def htb(data):
         """
         data_length = float(len(data))
         data_mean = sum(data) / data_length
-        head = [_ for _ in data if _ > data_mean]
+        head = [datum for datum in data if datum > data_mean]
         outp.append(data_mean)
         while len(head) > 1 and len(head) / data_length < 0.40:
             return htb_inner(head)
+
     htb_inner(data)
+
     return outp
