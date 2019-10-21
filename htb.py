@@ -41,16 +41,19 @@ def htb(data):
     assert data, "Input must not be empty."
     assert all(isinstance(datum, int) or isinstance(datum, float) for datum in data), "All input values must be numeric."
 
-    outp = []  # array of break points
+    results = []  # array of break points
 
     def htb_inner(data):
         """
         Inner ht breaks function for recursively computing the break points.
         """
+        # Add mean to results
         data_length = float(len(data))
         data_mean = sum(data) / data_length
-        head = [datum for datum in data if datum > data_mean]
         outp.append(data_mean)
+
+        # Recursive call to get next break point
+        head = [datum for datum in data if datum > data_mean]
         while len(head) > 1 and len(head) / data_length < 0.40:
             return htb_inner(head)
 
