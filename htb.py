@@ -34,7 +34,7 @@ def htb(data):
 
     Returns
     -------
-    outp : list 
+    results : list 
         List of data representing break points
     """
     # test input
@@ -50,7 +50,7 @@ def htb(data):
         # Add mean to results
         data_length = float(len(data))
         data_mean = sum(data) / data_length
-        outp.append(data_mean)
+        results.append(data_mean)
 
         # Recursive call to get next break point
         head = [datum for datum in data if datum > data_mean]
@@ -59,4 +59,4 @@ def htb(data):
 
     htb_inner(data)
 
-    return outp
+    return results
